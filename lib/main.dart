@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tokota/constants.dart';
 import 'package:tokota/route.dart';
 import 'package:tokota/screen/splash/SplashScreen.dart';
+import 'package:tokota/theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,15 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: "Muli",
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: kTextColor),
-          bodyText2: TextStyle(color: kTextColor),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: themeData(),
       // home: SplashScreen(),
       initialRoute: SplashScreen.routeName,
       routes: route,

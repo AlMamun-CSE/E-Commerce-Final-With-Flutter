@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tokota/constants.dart';
+import 'package:tokota/screen/sign_in/sign_in_screen.dart';
 import 'package:tokota/size_config.dart';
 
 //This the best practices
@@ -72,7 +73,7 @@ class _BodyState extends State<Body> {
                   DefaultButton(
                     text: "Continue",
                     press: (){
-
+                      Navigator.pushNamed(context, SignInScreen.routeName);
                     },
                   ),
                   Spacer(),
