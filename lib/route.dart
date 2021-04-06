@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tokota/screen/forgot_password/forgot_password_screen.dart';
 import 'package:tokota/screen/sign_in/sign_in_screen.dart';
 import 'package:tokota/screen/splash/SplashScreen.dart';
 
@@ -7,4 +8,5 @@ import 'package:tokota/screen/splash/SplashScreen.dart';
 final Map<String, WidgetBuilder> route = {
   SplashScreen.routeName: (context) => SplashScreen(),
   SignInScreen.routeName: (context) => SignInScreen(),
+  ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
 };
