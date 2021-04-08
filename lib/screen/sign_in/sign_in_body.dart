@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/parser.dart';
 import 'package:tokota/components/default_button.dart';
+import 'package:tokota/components/no_account_text.dart';
 import 'package:tokota/constants.dart';
 import 'package:tokota/screen/forgot_password/forgot_password_screen.dart';
 import 'package:tokota/screen/sign_in/sign_form.dart';
@@ -73,38 +74,6 @@ class SignInBody extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class NoAccountText extends StatelessWidget {
-  const NoAccountText({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          "Don't have an account?",
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(16),
-          ),
-        ),
-        GestureDetector(
-          onTap: (){
-            //......................................................
-          },
-          child: Text(
-            "Sign Up",
-            style: TextStyle(
-                fontSize: getProportionateScreenWidth(16),
-                color: kPrimaryColor),
-          ),
-        ),
-      ],
     );
   }
 }

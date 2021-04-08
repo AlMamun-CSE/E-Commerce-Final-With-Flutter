@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tokota/components/default_button.dart';
 import 'package:tokota/screen/forgot_password/forgot_password_screen.dart';
+import 'package:tokota/screen/login_success/login_success_screen.dart';
 
 import '../../constants.dart';
 import '../../size_config.dart';
@@ -64,6 +65,10 @@ class _SignFromState extends State<SignFrom> {
             press: () {
               if (_fromKey.currentState.validate()) {
                 _fromKey.currentState.save();
+
+                //if all are valid than go to success screen
+                Navigator.pushNamed(context, LogInSuccessScreen.routeName);
+
               }
             },
           )
@@ -81,10 +86,12 @@ class _SignFromState extends State<SignFrom> {
           setState(() {
             errors.remove(kPassNullError);
           });
+          return "";
         } else if (value.length >= 8 && errors.contains(kShortPassError)) {
           setState(() {
             errors.remove(kShortPassError);
           });
+          return "";
         }
         return null;
       },
@@ -93,10 +100,12 @@ class _SignFromState extends State<SignFrom> {
           setState(() {
             errors.add(kPassNullError);
           });
+          return "";
         } else if (value.length < 8 && !errors.contains(kShortPassError)) {
           setState(() {
             errors.add(kShortPassError);
           });
+          return "";
         }
         return null;
       },
@@ -133,11 +142,13 @@ class _SignFromState extends State<SignFrom> {
           setState(() {
             errors.add(kEmailNullError);
           });
+          return "";
         } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
           });
+          return "";
         }
         return null;
       },
