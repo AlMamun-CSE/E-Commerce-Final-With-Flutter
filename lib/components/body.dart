@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tokota/constants.dart';
+import 'package:tokota/screen/phone_otp/phone_otp_screen.dart';
 import 'package:tokota/screen/sign_in/sign_in_screen.dart';
 import 'package:tokota/size_config.dart';
 
